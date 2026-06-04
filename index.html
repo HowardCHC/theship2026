@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>第十五屆活力盃聯合運動會 - 大船與蕩蕩歡樂比賽公告</title>
+  <title>第十五屆活力盃聯合運動會 - 大船羽球比賽公告</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -38,16 +38,12 @@
       overflow-x: hidden;
     }
     .neon-border-blue {
-      border: 1px solid rgba(0, 240, 255, 0.4);
-      box-shadow: 0 0 12px rgba(0, 240, 255, 0.2);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
     }
     .neon-border-pink {
-      border: 1px solid rgba(255, 0, 127, 0.4);
-      box-shadow: 0 0 12px rgba(255, 0, 127, 0.2);
-    }
-    .neon-border-green {
-      border: 1px solid rgba(57, 255, 20, 0.4);
-      box-shadow: 0 0 12px rgba(57, 255, 20, 0.2);
+      border: 1px solid rgba(255, 0, 127, 0.3);
+      box-shadow: 0 0 10px rgba(255, 0, 127, 0.1);
     }
     .neon-text-blue {
       text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
@@ -110,7 +106,7 @@
   <header class="w-full bg-brand-card/80 backdrop-blur-md border-b border-slate-800 py-3 px-4 flex justify-between items-center z-50 sticky top-0">
     <div class="flex items-center space-x-3">
       <div class="w-2 h-2 rounded-full bg-brand-neonBlue beacon-pulse-blue"></div>
-      <span class="font-bold text-sm tracking-widest text-slate-200">大船 & 蕩蕩歡樂 • VITALITY CUP</span>
+      <span class="font-bold text-sm tracking-widest text-slate-200">大船羽球 • VITALITY CUP</span>
     </div>
     <div class="bg-brand-dark/90 px-3 py-1 rounded-full border border-slate-800 flex items-center space-x-1">
       <span class="text-xs text-brand-neonPink font-bold">SLIDE</span>
@@ -129,7 +125,7 @@
         </span>
       </div>
       <h1 class="text-4xl md:text-5xl font-extrabold tracking-wide leading-tight text-white py-2">
-        大船 & 蕩蕩歡樂 <br>
+        大船羽球 <br>
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-neonBlue via-purple-400 to-brand-neonPink neon-text-blue">
           比賽公告
         </span>
@@ -209,7 +205,7 @@
       </div>
     </section>
 
-    <!-- SLIDE 3: 全陣容戰術導航目錄 -->
+    <!-- SLIDE 3: 全陣容戰術導航目錄 (頁面重塑不滾動，已新增公告資訊快速入口) -->
     <section id="slide-3" class="slide-content slide-enter hidden space-y-4">
       <div class="text-center">
         <h2 class="text-xl md:text-2xl font-bold text-white tracking-wider">🚢 大船戰術導航目錄</h2>
@@ -323,6 +319,32 @@
           </div>
         </div>
       </div>
+
+      <!-- 區塊 3: 大會重要公告與賽前指南 (新增快捷按鈕專區，無需滾動直接觀看) -->
+      <div class="bg-brand-card/40 p-2.5 rounded-xl border border-slate-800 space-y-2">
+        <h3 class="text-xs font-bold text-slate-300 border-b border-slate-800 pb-1.5 flex items-center justify-between">
+          <span class="flex items-center space-x-1"><span>📌</span> <span>大會公告與賽前準備指南</span></span>
+          <span class="text-[9px] bg-slate-800 px-1.5 py-0.5 rounded text-slate-400">大會公告</span>
+        </h3>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+          <button onclick="goToSlide(16)" class="bg-brand-card hover:bg-brand-neonBlue/10 p-2 rounded-lg border border-slate-800 hover:neon-border-blue transition-all text-[11px] text-center font-bold flex flex-col items-center justify-center space-y-0.5">
+            <span class="text-sm">⛺</span>
+            <span>3F 場地配置</span>
+          </button>
+          <button onclick="goToSlide(17)" class="bg-brand-card hover:bg-brand-neonPink/10 p-2 rounded-lg border border-slate-800 hover:neon-border-pink transition-all text-[11px] text-center font-bold flex flex-col items-center justify-center space-y-0.5">
+            <span class="text-sm">🚨</span>
+            <span>大會重要規範</span>
+          </button>
+          <button onclick="goToSlide(18)" class="bg-brand-card hover:bg-brand-neonGreen/10 p-2 rounded-lg border border-slate-800 hover:neon-border-green transition-all text-[11px] text-center font-bold flex flex-col items-center justify-center space-y-0.5">
+            <span class="text-sm">⚡</span>
+            <span>賽前備戰心法</span>
+          </button>
+          <button onclick="goToSlide(19)" class="bg-brand-card hover:bg-yellow-500/10 p-2 rounded-lg border border-slate-800 hover:border-yellow-500/30 transition-all text-[11px] text-center font-bold flex flex-col items-center justify-center space-y-0.5">
+            <span class="text-sm">🏆</span>
+            <span>晉級與頒獎</span>
+          </button>
+        </div>
+      </div>
     </section>
 
     <!-- SLIDE 4: 大船幼幼組 - 餡餅 / 小魚 -->
@@ -398,7 +420,7 @@
           <tbody class="text-xs text-slate-300 divide-y divide-slate-800/50">
             <tr class="hover:bg-brand-card/40 transition">
               <td class="p-4 whitespace-nowrap font-bold text-white">幼幼組【22】</td>
-              <td class="p-4 whitespace-nowrap">08:00</td>
+              <td class="p-4 whitespace-nowrap">08:05</td>
               <td class="p-4 whitespace-nowrap font-medium text-brand-neonBlue">Court 4 (第4場地)</td>
               <td class="p-4 whitespace-nowrap">皮卡丘 / 小火龍 (清涼)</td>
             </tr>
@@ -925,29 +947,29 @@
       </div>
     </section>
 
-    <!-- SLIDE 16: 3F 戰術場地與休息位置 -->
-    <section id="slide-16" class="slide-content slide-enter hidden space-y-6">
-      <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-slate-800 pb-2">
+    <!-- SLIDE 16: 3F 戰術場地與休息位置 (極致自適應，完全免滾動一頁展示) -->
+    <section id="slide-16" class="slide-content slide-enter hidden space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-2">
         <div>
-          <h2 class="text-2xl font-bold text-white flex items-center space-x-2">
+          <h2 class="text-xl md:text-2xl font-bold text-white flex items-center space-x-2">
             <span class="text-brand-neonBlue">⛺</span>
             <span>3F 場地與大船休息配置圖</span>
           </h2>
-          <p class="text-xs text-brand-textGray mt-1">向量地圖自適應，可點擊下方按鈕切換雙日配置</p>
+          <p class="text-[11px] text-brand-textGray mt-0.5">免滑動自適應配置，點擊按鈕切換雙日據點</p>
         </div>
         <!-- 雙日切換按鈕 -->
-        <div class="flex space-x-1 mt-2 md:mt-0 bg-brand-dark p-1 rounded-xl border border-slate-800 self-start">
-          <button id="btn-map-sat" onclick="switchMapDay('sat')" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-brand-neonBlue text-brand-dark shadow-neon-blue">
+        <div class="flex space-x-1 mt-2 sm:mt-0 bg-brand-dark p-1 rounded-xl border border-slate-800 self-start">
+          <button id="btn-map-sat" onclick="switchMapDay('sat')" class="px-2.5 py-1.5 rounded-lg text-[11px] font-bold transition-all bg-brand-neonBlue text-brand-dark shadow-neon-blue">
             6/13 (六) 個人賽
           </button>
-          <button id="btn-map-sun" onclick="switchMapDay('sun')" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition-all">
+          <button id="btn-map-sun" onclick="switchMapDay('sun')" class="px-2.5 py-1.5 rounded-lg text-[11px] font-bold text-slate-400 hover:text-white transition-all">
             6/14 (日) 團體賽
           </button>
         </div>
       </div>
 
-      <!-- 自適應直接縮放容器 -->
-      <div class="w-full flex justify-center rounded-2xl border border-slate-800 bg-brand-card/40 p-2 sm:p-4 overflow-hidden">
+      <!-- 自適應直接等比縮放容器 (免左右滑動) -->
+      <div class="w-full flex justify-center rounded-2xl border border-slate-800 bg-brand-card/40 p-1 sm:p-2 overflow-hidden">
         <svg viewBox="0 0 800 500" class="w-full h-auto bg-slate-950 rounded-xl overflow-hidden border border-slate-800 shadow-2xl">
           <rect width="800" height="500" fill="#040815"/>
           <path d="M 0 100 L 800 100 M 0 200 L 800 200 M 0 300 L 800 300 M 0 400 L 800 400" stroke="#111827" stroke-width="1"/>
