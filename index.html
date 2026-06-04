@@ -1052,10 +1052,10 @@
         <!-- 導航控制鍵 (防誤觸大按鍵設計) -->
         <div class="flex gap-3 w-full sm:w-auto order-1 sm:order-2">
             <button class="flex-1 sm:flex-none py-2.5 px-5 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 hover:text-white rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5" onclick="prevSlide()">
-                <i class="fa-solid fa-chevron-left text-[10px]"></i> 上一步
+                <i class="fa-solid fa-chevron-left text-[10px]"></i> 上一頁
             </button>
             <button class="flex-1 sm:flex-none py-2.5 px-6 bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-400 hover:to-sky-500 text-white font-extrabold text-xs rounded-xl shadow-lg shadow-sky-500/20 transition-all flex items-center justify-center gap-1.5" onclick="nextSlide()" id="next-btn">
-                下一步 <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                下一頁 <i class="fa-solid fa-chevron-right text-[10px]"></i>
             </button>
         </div>
     </footer>
@@ -1191,14 +1191,14 @@
                 }
             }
 
-            // 動態變更「下一步」按鈕文字
+            // 動態變更「下一頁」按鈕文字
             const nextBtn = document.getElementById('next-btn');
             if (currentSlide === totalSlides) {
                 nextBtn.innerHTML = `回首頁 <i class="fa-solid fa-house-chimney text-[10px]"></i>`;
             } else if (currentSlide === 3) {
-                nextBtn.innerHTML = `下一隊 <i class="fa-solid fa-chevron-right text-[10px]"></i>`;
+                nextBtn.innerHTML = `下一頁 <i class="fa-solid fa-chevron-right text-[10px]"></i>`;
             } else {
-                nextBtn.innerHTML = `下一步 <i class="fa-solid fa-chevron-right text-[10px]"></i>`;
+                nextBtn.innerHTML = `下一頁 <i class="fa-solid fa-chevron-right text-[10px]"></i>`;
             }
         }
 
@@ -1264,10 +1264,10 @@
             }
 
             if (touchStartX - touchEndX > swipeThreshold) {
-                // 向左滑 -> 下一步
+                // 向左滑 -> 下一頁
                 nextSlide();
             } else if (touchEndX - touchStartX > swipeThreshold) {
-                // 向右滑 -> 上一步
+                // 向右滑 -> 上一頁
                 prevSlide();
             }
         }
