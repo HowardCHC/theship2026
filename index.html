@@ -188,75 +188,115 @@
     <section id="slide-3" class="slide-content slide-enter hidden space-y-4">
       <div class="text-center">
         <h2 class="text-2xl font-bold text-white tracking-wider">🚢 戰術導航目錄</h2>
-        <p class="text-xs text-brand-neonBlue mt-1">點擊以下任一選手或隊伍，即可直接跳轉至其專屬賽程頁面</p>
+        <p class="text-xs text-brand-neonBlue mt-1">請選擇賽制與球隊，點擊直接跳轉至專屬賽程頁面</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-h-[380px] overflow-y-auto pr-1">
-        <!-- 1. 大船羽球優先區 -->
-        <div class="bg-brand-card/40 p-3 rounded-xl border border-brand-neonBlue/20 space-y-2">
-          <h3 class="text-xs font-bold text-brand-neonBlue border-b border-slate-800 pb-1.5 flex items-center space-x-2">
-            <span>🚢</span> <span>大船羽球（優先排序）</span>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-h-[380px] overflow-y-auto pr-1">
+        
+        <!-- 區塊 1: 個人雙打 (6/13 六) -->
+        <div class="bg-brand-card/40 p-3 rounded-2xl border border-brand-neonBlue/20 space-y-3">
+          <h3 class="text-sm font-bold text-brand-neonBlue border-b border-slate-800 pb-2 flex items-center justify-between">
+            <span class="flex items-center space-x-2"><span>👤</span> <span>個人雙打賽程 (6/13 六)</span></span>
+            <span class="text-[10px] bg-brand-neonBlue/10 px-2 py-0.5 rounded text-brand-neonBlue">個人賽</span>
           </h3>
-          <div class="flex flex-col space-y-1.5 text-[11px]">
-            <button onclick="goToSlide(4)" class="text-left bg-brand-card hover:bg-brand-neonBlue/10 p-2 rounded-lg border border-slate-800 hover:neon-border-blue transition-all flex justify-between items-center">
-              <span>👤 幼幼組：<strong>餡餅 / 小魚</strong></span>
-              <span class="bg-brand-neonBlue/10 text-brand-neonBlue px-1.5 py-0.5 rounded text-[10px]">J組 (J4)</span>
-            </button>
-            <button onclick="goToSlide(5)" class="text-left bg-brand-card hover:bg-brand-neonBlue/10 p-2 rounded-lg border border-slate-800 hover:neon-border-blue transition-all flex justify-between items-center">
-              <span>👤 幼幼組：<strong>冠任 / 星辰</strong></span>
-              <span class="bg-brand-neonBlue/10 text-brand-neonBlue px-1.5 py-0.5 rounded text-[10px]">K組 (K4)</span>
-            </button>
-            <button onclick="goToSlide(6)" class="text-left bg-brand-card hover:bg-brand-neonBlue/10 p-2 rounded-lg border border-slate-800 hover:neon-border-blue transition-all flex justify-between items-center">
-              <span>👤 歡樂組：<strong>歐肯 / 皓淳</strong></span>
-              <span class="bg-brand-neonBlue/10 text-brand-neonBlue px-1.5 py-0.5 rounded text-[10px]">C組 (C2)</span>
-            </button>
-            <button onclick="goToSlide(7)" class="text-left bg-brand-card hover:bg-brand-neonBlue/10 p-2 rounded-lg border border-slate-800 hover:neon-border-blue transition-all flex justify-between items-center">
-              <span>👤 歡樂組：<strong>Eric / 饅頭</strong></span>
-              <span class="bg-brand-neonBlue/10 text-brand-neonBlue px-1.5 py-0.5 rounded text-[10px]">E組 (E4)</span>
-            </button>
-            <button onclick="goToSlide(8)" class="text-left bg-brand-card hover:bg-brand-neonBlue/10 p-2 rounded-lg border border-slate-800 hover:neon-border-blue transition-all flex justify-between items-center">
-              <span>👤 歡樂組：<strong>阿浩 / 二號</strong></span>
-              <span class="bg-brand-neonBlue/10 text-brand-neonBlue px-1.5 py-0.5 rounded text-[10px]">G組 (G4)</span>
-            </button>
-            <button onclick="goToSlide(9)" class="text-left bg-brand-card hover:bg-brand-neonBlue/10 p-2 rounded-lg border border-slate-800 hover:neon-border-blue transition-all flex justify-between items-center">
-              <span>👥 團體：<strong>山重幼稚園</strong></span>
-              <span class="bg-brand-neonBlue/10 text-brand-neonBlue px-1.5 py-0.5 rounded text-[10px]">B組 (B1)</span>
-            </button>
-            <button onclick="goToSlide(10)" class="text-left bg-brand-card hover:bg-brand-neonBlue/10 p-2 rounded-lg border border-slate-800 hover:neon-border-blue transition-all flex justify-between items-center">
-              <span>👥 團體：<strong>陽光男子羽球團</strong></span>
-              <span class="bg-brand-neonBlue/10 text-brand-neonBlue px-1.5 py-0.5 rounded text-[10px]">E組 (E1)</span>
-            </button>
-            <button onclick="goToSlide(11)" class="text-left bg-brand-card hover:bg-brand-neonBlue/10 p-2 rounded-lg border border-slate-800 hover:neon-border-blue transition-all flex justify-between items-center">
-              <span>👥 團體：<strong>靠北羽球隊</strong></span>
-              <span class="bg-brand-neonBlue/10 text-brand-neonBlue px-1.5 py-0.5 rounded text-[10px]">H組 (H3)</span>
-            </button>
+          
+          <!-- 大船羽球 -->
+          <div class="space-y-1.5">
+            <h4 class="text-[10px] font-bold text-brand-neonBlue flex items-center space-x-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-neonBlue"></span>
+              <span>大船羽球（優先排序）</span>
+            </h4>
+            <div class="flex flex-col space-y-1.5 text-[11px]">
+              <button onclick="goToSlide(4)" class="text-left bg-brand-card hover:bg-brand-neonBlue/10 p-2 rounded-lg border border-slate-800 hover:neon-border-blue transition-all flex justify-between items-center">
+                <span>👤 幼幼組：<strong>餡餅 / 小魚</strong></span>
+                <span class="bg-brand-neonBlue/10 text-brand-neonBlue px-1.5 py-0.5 rounded text-[10px]">J組 (J4)</span>
+              </button>
+              <button onclick="goToSlide(5)" class="text-left bg-brand-card hover:bg-brand-neonBlue/10 p-2 rounded-lg border border-slate-800 hover:neon-border-blue transition-all flex justify-between items-center">
+                <span>👤 幼幼組：<strong>冠任 / 星辰</strong></span>
+                <span class="bg-brand-neonBlue/10 text-brand-neonBlue px-1.5 py-0.5 rounded text-[10px]">K組 (K4)</span>
+              </button>
+              <button onclick="goToSlide(6)" class="text-left bg-brand-card hover:bg-brand-neonBlue/10 p-2 rounded-lg border border-slate-800 hover:neon-border-blue transition-all flex justify-between items-center">
+                <span>👤 歡樂組：<strong>歐肯 / 皓淳</strong></span>
+                <span class="bg-brand-neonBlue/10 text-brand-neonBlue px-1.5 py-0.5 rounded text-[10px]">C組 (C2)</span>
+              </button>
+              <button onclick="goToSlide(7)" class="text-left bg-brand-card hover:bg-brand-neonBlue/10 p-2 rounded-lg border border-slate-800 hover:neon-border-blue transition-all flex justify-between items-center">
+                <span>👤 歡樂組：<strong>Eric / 饅頭</strong></span>
+                <span class="bg-brand-neonBlue/10 text-brand-neonBlue px-1.5 py-0.5 rounded text-[10px]">E組 (E4)</span>
+              </button>
+              <button onclick="goToSlide(8)" class="text-left bg-brand-card hover:bg-brand-neonBlue/10 p-2 rounded-lg border border-slate-800 hover:neon-border-blue transition-all flex justify-between items-center">
+                <span>👤 歡樂組：<strong>阿浩 / 二號</strong></span>
+                <span class="bg-brand-neonBlue/10 text-brand-neonBlue px-1.5 py-0.5 rounded text-[10px]">G組 (G4)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 蕩蕩歡樂 & 其他球隊 -->
+          <div class="space-y-1.5 pt-2 border-t border-slate-800/60">
+            <h4 class="text-[10px] font-bold text-brand-neonPink flex items-center space-x-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-neonPink"></span>
+              <span>蕩蕩歡樂 ＆ 其他球隊</span>
+            </h4>
+            <div class="flex flex-col space-y-1.5 text-[11px]">
+              <button onclick="goToSlide(13)" class="text-left bg-brand-card hover:bg-brand-neonPink/10 p-2 rounded-lg border border-slate-800 hover:neon-border-pink transition-all flex justify-between items-center">
+                <span>👤 歡樂組：<strong>余翔拳 (大翔/小余)</strong></span>
+                <span class="bg-brand-neonPink/10 text-brand-neonPink px-1.5 py-0.5 rounded text-[10px]">B組 (B4)</span>
+              </button>
+              <button onclick="goToSlide(14)" class="text-left bg-brand-card hover:bg-brand-neonPink/10 p-2 rounded-lg border border-slate-800 hover:neon-border-pink transition-all flex justify-between items-center">
+                <span>👤 幼幼組：<strong>鬼針草班 (小古/喬)</strong></span>
+                <span class="bg-brand-neonPink/10 text-brand-neonPink px-1.5 py-0.5 rounded text-[10px]">I組 (I4)</span>
+              </button>
+              <button onclick="goToSlide(15)" class="text-left bg-brand-card hover:bg-brand-neonGreen/10 p-2 rounded-lg border border-slate-800 hover:neon-border-green transition-all flex justify-between items-center">
+                <span>👤 幼幼組：<strong>微光 (亞哲/克里斯)</strong></span>
+                <span class="bg-brand-neonGreen/10 text-brand-neonGreen px-1.5 py-0.5 rounded text-[10px]">D組 (D3)</span>
+              </button>
+            </div>
           </div>
         </div>
 
-        <!-- 2. 蕩蕩歡樂與其他戰隊區 -->
-        <div class="bg-brand-card/40 p-3 rounded-xl border border-brand-neonPink/20 space-y-2">
-          <h3 class="text-xs font-bold text-brand-neonPink border-b border-slate-800 pb-1.5 flex items-center space-x-2">
-            <span>⚡</span> <span>蕩蕩歡樂 & 其他戰隊</span>
+        <!-- 區塊 2: 團體賽 (6/14 日) -->
+        <div class="bg-brand-card/40 p-3 rounded-2xl border border-brand-neonPink/20 space-y-3">
+          <h3 class="text-sm font-bold text-brand-neonPink border-b border-slate-800 pb-2 flex items-center justify-between">
+            <span class="flex items-center space-x-2"><span>👥</span> <span>團體賽賽程 (6/14 日)</span></span>
+            <span class="text-[10px] bg-brand-neonPink/10 px-2 py-0.5 rounded text-brand-neonPink">團體賽</span>
           </h3>
-          <div class="flex flex-col space-y-1.5 text-[11px]">
-            <button onclick="goToSlide(12)" class="text-left bg-brand-card hover:bg-brand-neonPink/10 p-2 rounded-lg border border-slate-800 hover:neon-border-pink transition-all flex justify-between items-center">
-              <span>👥 團體：<strong>A-FORCE</strong></span>
-              <span class="bg-brand-neonPink/10 text-brand-neonPink px-1.5 py-0.5 rounded text-[10px]">D組 (D4)</span>
-            </button>
-            <button onclick="goToSlide(13)" class="text-left bg-brand-card hover:bg-brand-neonPink/10 p-2 rounded-lg border border-slate-800 hover:neon-border-pink transition-all flex justify-between items-center">
-              <span>👤 歡樂組：<strong>余翔拳 (大翔/小余)</strong></span>
-              <span class="bg-brand-neonPink/10 text-brand-neonPink px-1.5 py-0.5 rounded text-[10px]">B組 (B4)</span>
-            </button>
-            <button onclick="goToSlide(14)" class="text-left bg-brand-card hover:bg-brand-neonPink/10 p-2 rounded-lg border border-slate-800 hover:neon-border-pink transition-all flex justify-between items-center">
-              <span>👤 幼幼組：<strong>鬼針草班 (小古/喬)</strong></span>
-              <span class="bg-brand-neonPink/10 text-brand-neonPink px-1.5 py-0.5 rounded text-[10px]">I組 (I4)</span>
-            </button>
-            <button onclick="goToSlide(15)" class="text-left bg-brand-card hover:bg-brand-neonGreen/10 p-2 rounded-lg border border-slate-800 hover:neon-border-green transition-all flex justify-between items-center">
-              <span>👤 幼幼組：<strong>微光 (亞哲/克里斯)</strong></span>
-              <span class="bg-brand-neonGreen/10 text-brand-neonGreen px-1.5 py-0.5 rounded text-[10px]">D組 (D3)</span>
-            </button>
+
+          <!-- 大船羽球 -->
+          <div class="space-y-1.5">
+            <h4 class="text-[10px] font-bold text-brand-neonBlue flex items-center space-x-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-neonBlue"></span>
+              <span>大船羽球（優先排序）</span>
+            </h4>
+            <div class="flex flex-col space-y-1.5 text-[11px]">
+              <button onclick="goToSlide(9)" class="text-left bg-brand-card hover:bg-brand-neonBlue/10 p-2 rounded-lg border border-slate-800 hover:neon-border-blue transition-all flex justify-between items-center">
+                <span>👥 團體：<strong>山重幼稚園</strong></span>
+                <span class="bg-brand-neonBlue/10 text-brand-neonBlue px-1.5 py-0.5 rounded text-[10px]">B組 (B1)</span>
+              </button>
+              <button onclick="goToSlide(10)" class="text-left bg-brand-card hover:bg-brand-neonBlue/10 p-2 rounded-lg border border-slate-800 hover:neon-border-blue transition-all flex justify-between items-center">
+                <span>👥 團體：<strong>陽光男子羽球團</strong></span>
+                <span class="bg-brand-neonBlue/10 text-brand-neonBlue px-1.5 py-0.5 rounded text-[10px]">E組 (E1)</span>
+              </button>
+              <button onclick="goToSlide(11)" class="text-left bg-brand-card hover:bg-brand-neonBlue/10 p-2 rounded-lg border border-slate-800 hover:neon-border-blue transition-all flex justify-between items-center">
+                <span>👥 團體：<strong>靠北羽球隊</strong></span>
+                <span class="bg-brand-neonBlue/10 text-brand-neonBlue px-1.5 py-0.5 rounded text-[10px]">H組 (H3)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 蕩蕩歡樂 & 其他球隊 -->
+          <div class="space-y-1.5 pt-2 border-t border-slate-800/60">
+            <h4 class="text-[10px] font-bold text-brand-neonPink flex items-center space-x-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-neonPink"></span>
+              <span>蕩蕩歡樂 ＆ 其他球隊</span>
+            </h4>
+            <div class="flex flex-col space-y-1.5 text-[11px]">
+              <button onclick="goToSlide(12)" class="text-left bg-brand-card hover:bg-brand-neonPink/10 p-2 rounded-lg border border-slate-800 hover:neon-border-pink transition-all flex justify-between items-center">
+                <span>👥 團體：<strong>A-FORCE</strong></span>
+                <span class="bg-brand-neonPink/10 text-brand-neonPink px-1.5 py-0.5 rounded text-[10px]">D組 (D4)</span>
+              </button>
+            </div>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -273,6 +313,7 @@
       </div>
 
       <div class="scroll-container overflow-x-auto rounded-2xl border border-slate-800 bg-brand-card/40">
+        <div class="text-center text-[10px] text-slate-500 py-1 bg-slate-900/60 border-b border-slate-800 md:hidden">◀ 左右滑動檢視完整賽程 ▶</div>
         <table class="w-full text-left border-collapse min-w-[760px]">
           <thead>
             <tr class="bg-brand-card/80 border-b border-slate-800 text-xs text-brand-neonBlue font-bold">
@@ -319,6 +360,7 @@
       </div>
 
       <div class="scroll-container overflow-x-auto rounded-2xl border border-slate-800 bg-brand-card/40">
+        <div class="text-center text-[10px] text-slate-500 py-1 bg-slate-900/60 border-b border-slate-800 md:hidden">◀ 左右滑動檢視完整賽程 ▶</div>
         <table class="w-full text-left border-collapse min-w-[760px]">
           <thead>
             <tr class="bg-brand-card/80 border-b border-slate-800 text-xs text-brand-neonBlue font-bold">
@@ -365,6 +407,7 @@
       </div>
 
       <div class="scroll-container overflow-x-auto rounded-2xl border border-slate-800 bg-brand-card/40">
+        <div class="text-center text-[10px] text-slate-500 py-1 bg-slate-900/60 border-b border-slate-800 md:hidden">◀ 左右滑動檢視完整賽程 ▶</div>
         <table class="w-full text-left border-collapse min-w-[800px]">
           <thead>
             <tr class="bg-brand-card/80 border-b border-slate-800 text-xs text-brand-neonBlue font-bold">
@@ -411,6 +454,7 @@
       </div>
 
       <div class="scroll-container overflow-x-auto rounded-2xl border border-slate-800 bg-brand-card/40">
+        <div class="text-center text-[10px] text-slate-500 py-1 bg-slate-900/60 border-b border-slate-800 md:hidden">◀ 左右滑動檢視完整賽程 ▶</div>
         <table class="w-full text-left border-collapse min-w-[800px]">
           <thead>
             <tr class="bg-brand-card/80 border-b border-slate-800 text-xs text-brand-neonBlue font-bold">
@@ -457,6 +501,7 @@
       </div>
 
       <div class="scroll-container overflow-x-auto rounded-2xl border border-slate-800 bg-brand-card/40">
+        <div class="text-center text-[10px] text-slate-500 py-1 bg-slate-900/60 border-b border-slate-800 md:hidden">◀ 左右滑動檢視完整賽程 ▶</div>
         <table class="w-full text-left border-collapse min-w-[800px]">
           <thead>
             <tr class="bg-brand-card/80 border-b border-slate-800 text-xs text-brand-neonBlue font-bold">
@@ -512,6 +557,7 @@
       </div>
 
       <div class="scroll-container overflow-x-auto rounded-2xl border border-slate-800 bg-brand-card/40">
+        <div class="text-center text-[10px] text-slate-500 py-1 bg-slate-900/60 border-b border-slate-800 md:hidden">◀ 左右滑動檢視完整賽程 ▶</div>
         <table class="w-full text-left border-collapse min-w-[760px]">
           <thead>
             <tr class="bg-brand-card/80 border-b border-slate-800 text-xs text-brand-neonPink font-bold">
@@ -567,6 +613,7 @@
       </div>
 
       <div class="scroll-container overflow-x-auto rounded-2xl border border-slate-800 bg-brand-card/40">
+        <div class="text-center text-[10px] text-slate-500 py-1 bg-slate-900/60 border-b border-slate-800 md:hidden">◀ 左右滑動檢視完整賽程 ▶</div>
         <table class="w-full text-left border-collapse min-w-[760px]">
           <thead>
             <tr class="bg-brand-card/80 border-b border-slate-800 text-xs text-brand-neonPink font-bold">
@@ -622,6 +669,7 @@
       </div>
 
       <div class="scroll-container overflow-x-auto rounded-2xl border border-slate-800 bg-brand-card/40">
+        <div class="text-center text-[10px] text-slate-500 py-1 bg-slate-900/60 border-b border-slate-800 md:hidden">◀ 左右滑動檢視完整賽程 ▶</div>
         <table class="w-full text-left border-collapse min-w-[760px]">
           <thead>
             <tr class="bg-brand-card/80 border-b border-slate-800 text-xs text-brand-neonPink font-bold">
@@ -677,6 +725,7 @@
       </div>
 
       <div class="scroll-container overflow-x-auto rounded-2xl border border-slate-800 bg-brand-card/40">
+        <div class="text-center text-[10px] text-slate-500 py-1 bg-slate-900/60 border-b border-slate-800 md:hidden">◀ 左右滑動檢視完整賽程 ▶</div>
         <table class="w-full text-left border-collapse min-w-[760px]">
           <thead>
             <tr class="bg-brand-card/80 border-b border-slate-800 text-xs text-brand-neonPink font-bold">
@@ -723,6 +772,7 @@
       </div>
 
       <div class="scroll-container overflow-x-auto rounded-2xl border border-slate-800 bg-brand-card/40">
+        <div class="text-center text-[10px] text-slate-500 py-1 bg-slate-900/60 border-b border-slate-800 md:hidden">◀ 左右滑動檢視完整賽程 ▶</div>
         <table class="w-full text-left border-collapse min-w-[800px]">
           <thead>
             <tr class="bg-brand-card/80 border-b border-slate-800 text-xs text-brand-neonPink font-bold">
@@ -769,6 +819,7 @@
       </div>
 
       <div class="scroll-container overflow-x-auto rounded-2xl border border-slate-800 bg-brand-card/40">
+        <div class="text-center text-[10px] text-slate-500 py-1 bg-slate-900/60 border-b border-slate-800 md:hidden">◀ 左右滑動檢視完整賽程 ▶</div>
         <table class="w-full text-left border-collapse min-w-[800px]">
           <thead>
             <tr class="bg-brand-card/80 border-b border-slate-800 text-xs text-brand-neonPink font-bold">
@@ -815,6 +866,7 @@
       </div>
 
       <div class="scroll-container overflow-x-auto rounded-2xl border border-slate-800 bg-brand-card/40">
+        <div class="text-center text-[10px] text-slate-500 py-1 bg-slate-900/60 border-b border-slate-800 md:hidden">◀ 左右滑動檢視完整賽程 ▶</div>
         <table class="w-full text-left border-collapse min-w-[800px]">
           <thead>
             <tr class="bg-brand-card/80 border-b border-slate-800 text-xs text-brand-neonGreen font-bold">
@@ -1106,7 +1158,7 @@
             這兩週可以先將主要球拍重新穿線，給予新線一至兩週的掉磅延展期，避免比賽當天突然斷線或硬度不合。
           </p>
           <p class="text-brand-neonPink text-[11px] font-bold">
-            ⚠ 請特別注意身體安全，控制练习強度，切勿過度練習造成拉傷或受傷。
+            ⚠ 請特別注意身體安全，控制練習強度，切勿過度練習造成拉傷或受傷。
           </p>
         </div>
 
@@ -1118,7 +1170,7 @@
             前一晚請一定要睡飽、睡滿！羽球比賽需要高度專注力與敏捷爆發力。
           </p>
           <p class="text-slate-400 text-xs">
-            睡前再次確認攜帶裝備（備用球拍、替換排汗衣物、乾淨毛巾與保暖外套）。
+            睡前再次確認攜帶裝備：備用球拍、替換排汗衣物、乾淨毛巾與保暖外套，現場冷氣通常較強。
           </p>
         </div>
 
@@ -1130,7 +1182,7 @@
             務必隨身攜帶高能量補給品（如能量果凍、香蕉、巧克力或能量棒），供預賽與複賽間隙回補體力。
           </p>
           <p class="text-brand-neonBlue text-[11px] font-bold">
-            💡 運動飲料或水必備！建議以 1:1 的比例加水稀釋運動飲料，可防賽場高強度抽筋。
+            💡 運動飲料或水必備！可防賽場高強度抽筋。
           </p>
         </div>
       </div>
@@ -1173,7 +1225,7 @@
       <div class="w-2/3 bg-slate-800 h-1.5 rounded-full overflow-hidden">
         <div id="mobile-progress-bar" class="bg-brand-neonBlue h-full rounded-full transition-all duration-300" style="width: 5.26%;"></div>
       </div>
-      <span id="mobile-page-indicator" class="text-xs bg-slate-800 px-2 py-0.5 rounded font-bold text-slate-200">1/19</span>
+      <span id="mobile-page-indicator" class="text-xs bg-slate-800 px-2 py-0.5 rounded font-bold text-slate-200">1 / 19</span>
     </div>
 
     <!-- 控制按鈕列 -->
@@ -1246,7 +1298,7 @@
       document.getElementById('slide-badge').innerText = `${currentSlide.toString().padStart(2, '0')} / ${TOTAL_SLIDES.toString().padStart(2, '0')}`;
       
       // 更新手機版指示器
-      document.getElementById('mobile-page-indicator').innerText = `${currentSlide}/${TOTAL_SLIDES}`;
+      document.getElementById('mobile-page-indicator').innerText = `${currentSlide} / ${TOTAL_SLIDES}`;
       document.getElementById('mobile-progress-bar').style.width = `${(currentSlide / TOTAL_SLIDES) * 100}%`;
     }
 
