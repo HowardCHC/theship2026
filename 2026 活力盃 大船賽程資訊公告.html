@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>大船羽球 - 2026 活力盃比賽公告</title>
+    
+    <!-- 引入 Tailwind CSS 確保極速排版與響應式設計 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0ea5e9',
+                            emerald: '#10b981',
+                            indigo: '#6366f1',
+                            dark: '#090d16',
+                            card: '#111a2e'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google 頂級字型與 FontAwesome 圖標庫 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Noto Sans TC', 'Montserrat', sans-serif;
+            background-color: #0b0f19;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* 網格網線背景，凸顯羽球場競速感 */
+        .court-grid-bg {
+            background-image: 
+                linear-gradient(rgba(14, 165, 233, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(14, 165, 233, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        /* 自定義隱藏滾動條 */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* 🏆 大船高亮呼吸燈休息區 (霓虹特效) */
+        @keyframes pulse-dachuan {
+            0%, 100% {
+                box-shadow: 0 0 10px 0px rgba(14, 165, 233, 0.6), 0 0 10px 0px rgba(244, 63, 94, 0.6);
+                border-color: #0ea5e9;
+            }
+            50% {
+                box-shadow: 0 0 20px 6px rgba(14, 165, 233, 0.4), 0 0 20px 6px rgba(244, 63, 94, 0.4);
+                border-color: #f43f5e;
+            }
+        }
+
+        .dachuan-highlight {
+            animation: pulse-dachuan 2.5s infinite ease-in-out;
+            background: linear-gradient(135deg, #131d35, #1e1b4b);
+        }
+
+        /* 🚫 攀岩場危險警示斜紋 */
+        .hazard-bg {
+            background: repeating-linear-gradient(45deg, #111a2e, #111a2e 10px, #ef4444 10px, #ef4444 20px);
+        }
+
+        /* 羽球網線模擬 */
+        .net-line::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 0; right: 0;
+            height: 2px;
+            background: repeating-linear-gradient(90deg, #ffffff, #ffffff 4px, transparent 4px, transparent 8px);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="text-slate-200 min-h-screen flex flex-col justify-between overflow-x-hidden court-grid-bg selection:bg-sky-500 selection:text-white">
+
+    <header class="w-full bg-slate-900/80 backdrop-blur-md border-b border-slate-800/80 py-3 px-4 md:px-8 sticky top-0 z-40 flex justify-between items-center">
+        <div class="flex items-center gap-2 cursor-pointer" onclick="jumpToSlide(3)">
+            <span class="bg-sky-500/10 text-sky-400 p-1.5 rounded-lg border border-sky-500/20">
+                <i class="fa-solid fa-ship text-sm"></i>
+            </span>
+            <span class="font-black tracking-wider text-sm md:text-base text-white">大船出航 • 活力盃</span>
+        </div>
+        <div class="text-[10px] md:text-xs font-mono font-bold bg-slate-800 border border-slate-700/80 text-sky-400 py-1 px-2.5 rounded-full shadow-inner shadow-black/20">
+            SLIDE <span id="current-badge">1</span> / 16
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center p-3 sm:p-4 md:p-8">
+        <div class="w-full max-w-4xl bg-slate-900/90 border border-slate-800 rounded-2xl shadow-2xl relative overflow-hidden flex flex-col p-5 sm:p-6 md:p-10 min-h-[520px] sm:min-h-[580px] md:min-h-[620px]">
+            
+            <!-- 右上角賽事背景裝飾標籤 -->
+            <div class="absolute top-4 right-4 hidden sm:block font-mono text-[10px] font-extrabold text-sky-400/50 bg-sky-500/5 border border-sky-500/10 py-1 px-3 rounded-full">
+                15TH VITALITY CUP • 2026
+            </div>
+
+            <!-- ------------------ SLIDE 1: 封面 ------------------ -->
+            <div id="slide-1" class="slide-view flex flex-col justify-center flex-grow py-4 text-left">
+                <div class="inline-block self-start bg-sky-500/10 border border-sky-500/20 px-3.5 py-1.5 rounded-full mb-5 animate-pulse">
+                    <span class="text-sky-400 text-xs font-bold tracking-wider"><i class="fa-solid fa-map-pin mr-1.5"></i>蘆洲國民運動中心 • 115年6月13-14日</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-tight mb-4 tracking-tight">
+                    大船出航 齊心協力<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-400 filter drop-shadow-[0_0_15px_rgba(14,165,233,0.3)]">2026羽球活力盃</span><br>
+                    比賽公告
+                </h1>
+                <p class="text-slate-400 text-base sm:text-lg md:text-xl max-w-2xl leading-relaxed mb-6 font-medium">
+                    大船羽球團專屬賽事戰術手冊。內含各隊專屬頁面、時程報到要求、3F配置圖與賽前黃金期準備指南。
+                </p>
+                <div class="flex flex-wrap gap-3 mt-2">
+                    <button onclick="jumpToSlide(3)" class="bg-gradient-to-r from-sky-500 to-emerald-500 hover:from-sky-400 hover:to-emerald-400 text-white font-black text-sm py-3 px-6 rounded-xl shadow-lg shadow-sky-500/15 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-compass"></i> 開啟全陣容戰術目錄
+                    </button>
+                </div>
+            </div>
+
+            <!-- ------------------ SLIDE 2: 時程表 ------------------ -->
+            <div id="slide-2" class="slide-view hidden flex flex-col flex-grow py-2">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white border-l-4 border-sky-500 pl-3 mb-6">賽事重要時程總覽</h2>
+                
+                <div class="relative flex-grow flex flex-col justify-center py-4">
+                    <div class="absolute left-4 top-0 bottom-0 w-1 bg-slate-800 sm:left-1/2 sm:-ml-0.5 sm:block"></div>
+                    
+                    <div class="space-y-6 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 relative">
+                        <!-- 時程點 1 -->
+                        <div class="relative pl-10 sm:pl-0 sm:text-right sm:pr-10">
+                            <div class="absolute left-2 sm:left-auto sm:right-0 top-1.5 -mr-1.5 w-4 h-4 bg-sky-500 rounded-full border-4 border-slate-900 shadow-[0_0_10px_#0ea5e9]"></div>
+                            <div>
+                                <span class="inline-block bg-sky-500/10 text-sky-400 text-xs font-bold py-0.5 px-2 rounded-full mb-1">6/13 (六) 08:00</span>
+                                <h3 class="text-white font-bold text-base">個人賽：幼幼組報到</h3>
+                                <p class="text-slate-400 text-xs mt-1">餡餅/小魚 (J4)、冠任/星辰 (K4)</p>
+                            </div>
+                        </div>
+
+                        <!-- 時程點 2 -->
+                        <div class="relative pl-10 sm:pl-10 sm:text-left">
+                            <div class="absolute left-2 top-1.5 w-4 h-4 bg-sky-500 rounded-full border-4 border-slate-900 shadow-[0_0_10px_#0ea5e9]"></div>
+                            <div>
+                                <span class="inline-block bg-sky-500/10 text-sky-400 text-xs font-bold py-0.5 px-2 rounded-full mb-1">6/13 (六) 10:00</span>
+                                <h3 class="text-white font-bold text-base">個人賽：歡樂組優先報到</h3>
+                                <p class="text-slate-400 text-xs mt-1">歐肯/皓淳、Eric/饅頭、阿浩/二號隊伍集合</p>
+                            </div>
+                        </div>
+
+                        <!-- 時程點 3 -->
+                        <div class="relative pl-10 sm:pl-0 sm:text-right sm:pr-10">
+                            <div class="absolute left-2 sm:left-auto sm:right-0 top-1.5 -mr-1.5 w-emerald bg-emerald-500 rounded-full w-4 h-4 border-4 border-slate-900 shadow-[0_0_10px_#10b981]"></div>
+                            <div>
+                                <span class="inline-block bg-emerald-500/10 text-emerald-400 text-xs font-bold py-0.5 px-2 rounded-full mb-1">6/14 (日) 07:00</span>
+                                <h3 class="text-white font-bold text-base">團體賽：低階組優先報到</h3>
+                                <p class="text-slate-400 text-xs mt-1">山重幼稚園、A-Force、陽光男子、靠北隊集體報到</p>
+                            </div>
+                        </div>
+
+                        <!-- 時程點 4 -->
+                        <div class="relative pl-10 sm:pl-10 sm:text-left">
+                            <div class="absolute left-2 top-1.5 w-4 h-4 bg-emerald-500 rounded-full border-4 border-slate-900 shadow-[0_0_10px_#10b981]"></div>
+                            <div>
+                                <span class="inline-block bg-emerald-500/10 text-emerald-400 text-xs font-bold py-0.5 px-2 rounded-full mb-1">6/14 (日) 14:50</span>
+                                <h3 class="text-white font-bold text-base">低階組團體複賽戰役</h3>
+                                <p class="text-slate-400 text-xs mt-1">小組前二強出線晉級，向最高榮譽大會四強、決賽邁進</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ------------------ SLIDE 3: 全陣容戰術目錄 ------------------ -->
+            <div id="slide-3" class="slide-view hidden flex flex-col flex-grow py-2">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white border-l-4 border-sky-500 pl-3 mb-4">大船全陣容戰術導航目錄</h2>
+                <p class="text-slate-400 text-xs sm:text-sm mb-4">請點擊下方您的隊伍或想查詢的項目，將為您快速跳轉至專屬賽程頁面：</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 flex-grow overflow-y-auto no-scrollbar pb-2">
+                    
+                    <!-- 幼幼個人組 -->
+                    <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-3 flex flex-col">
+                        <h3 class="text-indigo-400 font-bold text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-indigo-500"></span>👶 個人賽：幼幼組
+                        </h3>
+                        <div class="flex flex-col gap-2 flex-grow justify-center">
+                            <button onclick="jumpToSlide(4)" class="w-full text-left bg-slate-800/50 hover:bg-slate-800 border border-slate-700/50 text-white font-semibold text-xs py-2 px-3 rounded-lg transition-all flex justify-between items-center group">
+                                <span>餡餅 / 小魚 <span class="text-[10px] text-slate-400 font-mono">(J4)</span></span>
+                                <i class="fa-solid fa-circle-chevron-right text-indigo-400 group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                            <button onclick="jumpToSlide(5)" class="w-full text-left bg-slate-800/50 hover:bg-slate-800 border border-slate-700/50 text-white font-semibold text-xs py-2 px-3 rounded-lg transition-all flex justify-between items-center group">
+                                <span>冠任 / 星辰 <span class="text-[10px] text-slate-400 font-mono">(K4)</span></span>
+                                <i class="fa-solid fa-circle-chevron-right text-indigo-400 group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 歡樂個人組 -->
+                    <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-3 flex flex-col">
+                        <h3 class="text-sky-400 font-bold text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-sky-500"></span>🍻 個人賽：歡樂組
+                        </h3>
+                        <div class="flex flex-col gap-1.5 flex-grow justify-center">
+                            <button onclick="jumpToSlide(6)" class="w-full text-left bg-slate-800/50 hover:bg-slate-800 border border-slate-700/50 text-white font-semibold text-xs py-1.5 px-3 rounded-lg transition-all flex justify-between items-center group">
+                                <span>歐肯 / 皓淳 <span class="text-[10px] text-slate-400 font-mono">(C2)</span></span>
+                                <i class="fa-solid fa-circle-chevron-right text-sky-400 group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                            <button onclick="jumpToSlide(7)" class="w-full text-left bg-slate-800/50 hover:bg-slate-800 border border-slate-700/50 text-white font-semibold text-xs py-1.5 px-3 rounded-lg transition-all flex justify-between items-center group">
+                                <span>Eric / 饅頭 <span class="text-[10px] text-slate-400 font-mono">(E4)</span></span>
+                                <i class="fa-solid fa-circle-chevron-right text-sky-400 group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                            <button onclick="jumpToSlide(8)" class="w-full text-left bg-slate-800/50 hover:bg-slate-800 border border-slate-700/50 text-white font-semibold text-xs py-1.5 px-3 rounded-lg transition-all flex justify-between items-center group">
+                                <span>阿浩 / 二號 <span class="text-[10px] text-slate-400 font-mono">(G4)</span></span>
+                                <i class="fa-solid fa-circle-chevron-right text-sky-400 group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 低階團體賽 -->
+                    <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-3 flex flex-col">
+                        <h3 class="text-emerald-400 font-bold text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>🏆 團體賽：低階組
+                        </h3>
+                        <div class="flex flex-col gap-1.5 flex-grow justify-center">
+                            <button onclick="jumpToSlide(9)" class="w-full text-left bg-slate-800/50 hover:bg-slate-800 border border-slate-700/50 text-white font-semibold text-xs py-1.5 px-3 rounded-lg transition-all flex justify-between items-center group">
+                                <span>山重幼稚園 <span class="text-[10px] text-slate-400 font-mono">(B1)</span></span>
+                                <i class="fa-solid fa-circle-chevron-right text-emerald-400 group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                            <button onclick="jumpToSlide(10)" class="w-full text-left bg-slate-800/50 hover:bg-slate-800 border border-slate-700/50 text-white font-semibold text-xs py-1.5 px-3 rounded-lg transition-all flex justify-between items-center group">
+                                <span>A-FORCE <span class="text-[10px] text-slate-400 font-mono">(D4)</span></span>
+                                <i class="fa-solid fa-circle-chevron-right text-emerald-400 group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                            <button onclick="jumpToSlide(11)" class="w-full text-left bg-slate-800/50 hover:bg-slate-800 border border-slate-700/50 text-white font-semibold text-xs py-1.5 px-3 rounded-lg transition-all flex justify-between items-center group">
+                                <span>陽光男子 <span class="text-[10px] text-slate-400 font-mono">(E1)</span></span>
+                                <i class="fa-solid fa-circle-chevron-right text-emerald-400 group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                            <button onclick="jumpToSlide(12)" class="w-full text-left bg-slate-800/50 hover:bg-slate-800 border border-slate-700/50 text-white font-semibold text-xs py-1.5 px-3 rounded-lg transition-all flex justify-between items-center group">
+                                <span>靠北羽球隊 <span class="text-[10px] text-slate-400 font-mono">(H3)</span></span>
+                                <i class="fa-solid fa-circle-chevron-right text-emerald-400 group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 底部快捷配置與備戰導航 -->
+                <div class="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-2">
+                    <button onclick="jumpToSlide(13)" class="bg-slate-800 hover:bg-slate-750 text-[11px] text-slate-300 font-bold py-2 px-3 rounded-xl border border-slate-700 flex items-center justify-center gap-1.5 transition-all"><i class="fa-solid fa-id-card"></i> 報到檢錄規範</button>
+                    <button onclick="jumpToSlide(14)" class="bg-slate-800 hover:bg-slate-750 text-[11px] text-slate-300 font-bold py-2 px-3 rounded-xl border border-slate-700 flex items-center justify-center gap-1.5 transition-all"><i class="fa-solid fa-map"></i> 3F 配置地圖</button>
+                    <button onclick="jumpToSlide(15)" class="bg-slate-800 hover:bg-slate-750 text-[11px] text-slate-300 font-bold py-2 px-3 rounded-xl border border-slate-700 flex items-center justify-center gap-1.5 transition-all"><i class="fa-solid fa-heart-pulse"></i> 賽前黃金備戰</button>
+                    <button onclick="jumpToSlide(16)" class="bg-slate-800 hover:bg-slate-750 text-[11px] text-slate-300 font-bold py-2 px-3 rounded-xl border border-slate-700 flex items-center justify-center gap-1.5 transition-all"><i class="fa-solid fa-bolt"></i> 當日高能補給</button>
+                </div>
+            </div>
+
+            <!-- ------------------ SLIDE 4: 個人賽 餡餅 / 小魚 (J4) ------------------ -->
+            <div id="slide-4" class="slide-view hidden flex flex-col flex-grow py-2">
+                <div class="flex justify-between items-start mb-3 border-b border-slate-800 pb-2">
+                    <div>
+                        <span class="bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 py-0.5 px-2 rounded-full text-xs font-bold uppercase tracking-wider mb-1 inline-block">6/13 (六) 個人雙打 — 幼幼組</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">選手：餡餅 / 小魚</h2>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-indigo-400 font-mono font-bold text-lg">J組 (J4)</div>
+                        <div class="text-slate-400 text-[10px] mt-0.5">大會報到：08:00 ~ 09:00</div>
+                    </div>
+                </div>
+                
+                <p class="text-slate-400 text-xs mb-3"><i class="fa-regular fa-lightbulb text-yellow-400 mr-1"></i>小組賽採循環賽制，取小組前二名晉級。場地與對手資訊如下：</p>
+                <div class="sm:hidden text-center text-[10px] text-sky-400 animate-pulse mb-2"><i class="fa-solid fa-arrows-left-right mr-1"></i> ◀ 左右滑動表格檢視完整賽程 ▶</div>
+
+                <div class="flex-grow flex items-center justify-center w-full">
+                    <div class="w-full overflow-x-auto rounded-xl border border-slate-800/80 bg-slate-950/50 no-scrollbar">
+                        <table class="w-full text-left border-collapse min-w-[760px]">
+                            <thead>
+                                <tr class="bg-slate-800/50 text-indigo-400 text-xs uppercase tracking-wider border-b border-slate-800">
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">預賽場次</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">大會表定時間</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">比賽場地</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">對戰對手</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">對手所屬隊伍</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-xs sm:text-sm divide-y divide-slate-800/40">
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">幼幼組【20】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">08:00</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-bold border border-emerald-500/20">Court 2</span></td>
+                                    <td class="py-3.5 px-4 text-white font-semibold whitespace-nowrap">小林 / 阿哲</td>
+                                    <td class="py-3.5 px-4 text-slate-400 whitespace-nowrap">啾咪咪</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">幼幼組【54】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">09:12</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-bold border border-emerald-500/20">Court 6</span></td>
+                                    <td class="py-3.5 px-4 text-white font-semibold whitespace-nowrap">Monk / Bosh <span class="text-emerald-400 text-[11px]">(最新更正對手)</span></td>
+                                    <td class="py-3.5 px-4 text-slate-400 whitespace-nowrap">成功</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">幼幼組【87】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">10:24</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-bold border border-emerald-500/20">Court 5</span></td>
+                                    <td class="py-3.5 px-4 text-white font-semibold whitespace-nowrap">Elmo / 77</td>
+                                    <td class="py-3.5 px-4 text-slate-400 whitespace-nowrap">大會隨機組合</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ------------------ SLIDE 5: 個人賽 冠任 / 星辰 (K4) ------------------ -->
+            <div id="slide-5" class="slide-view hidden flex flex-col flex-grow py-2">
+                <div class="flex justify-between items-start mb-3 border-b border-slate-800 pb-2">
+                    <div>
+                        <span class="bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 py-0.5 px-2 rounded-full text-xs font-bold uppercase tracking-wider mb-1 inline-block">6/13 (六) 個人雙打 — 幼幼組</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">選手：冠任 / 星辰</h2>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-indigo-400 font-mono font-bold text-lg">K組 (K4)</div>
+                        <div class="text-slate-400 text-[10px] mt-0.5">大會報到：08:00 ~ 09:00</div>
+                    </div>
+                </div>
+                
+                <p class="text-slate-400 text-xs mb-3"><i class="fa-regular fa-lightbulb text-yellow-400 mr-1"></i>小組賽採循環賽制，取小組前二名晉級。場地與對手資訊如下：</p>
+                <div class="sm:hidden text-center text-[10px] text-sky-400 animate-pulse mb-2"><i class="fa-solid fa-arrows-left-right mr-1"></i> ◀ 左右滑動表格檢視完整賽程 ▶</div>
+
+                <div class="flex-grow flex items-center justify-center w-full">
+                    <div class="w-full overflow-x-auto rounded-xl border border-slate-800/80 bg-slate-950/50 no-scrollbar">
+                        <table class="w-full text-left border-collapse min-w-[760px]">
+                            <thead>
+                                <tr class="bg-slate-800/50 text-indigo-400 text-xs uppercase tracking-wider border-b border-slate-800">
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">預賽場次</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">大會表定時間</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">比賽場地</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">對戰對手</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">對手所屬隊伍</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-xs sm:text-sm divide-y divide-slate-800/40">
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">幼幼組【22】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">08:00</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-bold border border-emerald-500/20">Court 4</span></td>
+                                    <td class="py-3.5 px-4 text-white font-semibold whitespace-nowrap">皮卡丘 / 小火龍</td>
+                                    <td class="py-3.5 px-4 text-slate-400 whitespace-nowrap">清涼</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">幼幼組【56】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">09:24</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-bold border border-emerald-500/20">Court 2</span></td>
+                                    <td class="py-3.5 px-4 text-white font-semibold whitespace-nowrap">恩佐 / 小吳</td>
+                                    <td class="py-3.5 px-4 text-slate-400 whitespace-nowrap">愛羽和平</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">幼幼組【89】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">10:36</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-bold border border-emerald-500/20">Court 3</span></td>
+                                    <td class="py-3.5 px-4 text-white font-semibold whitespace-nowrap">Leo / 馬力歐</td>
+                                    <td class="py-3.5 px-4 text-slate-400 whitespace-nowrap">夏洛利</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ------------------ SLIDE 6: 個人賽 歐肯 / 皓淳 (C2) ------------------ -->
+            <div id="slide-6" class="slide-view hidden flex flex-col flex-grow py-2">
+                <div class="flex justify-between items-start mb-3 border-b border-slate-800 pb-2">
+                    <div>
+                        <span class="bg-sky-500/10 text-sky-400 border border-sky-500/20 py-0.5 px-2 rounded-full text-xs font-bold uppercase tracking-wider mb-1 inline-block">6/13 (六) 個人雙打 — 歡樂組</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">選手：歐肯 / 皓淳</h2>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-sky-400 font-mono font-bold text-lg">C組 (C2)</div>
+                        <div class="text-emerald-400 text-[10px] font-bold mt-0.5">10:00 ~ 10:30 優先報到</div>
+                    </div>
+                </div>
+                
+                <p class="text-slate-400 text-xs mb-3"><i class="fa-regular fa-lightbulb text-yellow-400 mr-1"></i>享大船 A~I 組優先報到特權。小組前二名晉級。場地與對手如下：</p>
+                <div class="sm:hidden text-center text-[10px] text-sky-400 animate-pulse mb-2"><i class="fa-solid fa-arrows-left-right mr-1"></i> ◀ 左右滑動表格檢視完整賽程 ▶</div>
+
+                <div class="flex-grow flex items-center justify-center w-full">
+                    <div class="w-full overflow-x-auto rounded-xl border border-slate-800/80 bg-slate-950/50 no-scrollbar">
+                        <table class="w-full text-left border-collapse min-w-[760px]">
+                            <thead>
+                                <tr class="bg-slate-800/50 text-sky-400 text-xs uppercase tracking-wider border-b border-slate-800">
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">預賽場次</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">大會表定時間</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">比賽場地</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">對戰對手</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">對手所屬隊伍</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-xs sm:text-sm divide-y divide-slate-800/40">
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">歡樂組【5】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">11:32</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-bold border border-emerald-500/20">Court 5</span></td>
+                                    <td class="py-3.5 px-4 text-white font-semibold whitespace-nowrap">建宏 / NICK</td>
+                                    <td class="py-3.5 px-4 text-slate-400 whitespace-nowrap">羽智</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">歡樂組【32】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">12:32</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-bold border border-emerald-500/20">Court 2</span></td>
+                                    <td class="py-3.5 px-4 text-white font-semibold whitespace-nowrap">育林 / 維維</td>
+                                    <td class="py-3.5 px-4 text-slate-400 whitespace-nowrap">羽球色</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">歡樂組【58】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">13:56</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-bold border border-emerald-500/20">Court 2</span></td>
+                                    <td class="py-3.5 px-4 text-white font-semibold whitespace-nowrap">Leo張 / Alan</td>
+                                    <td class="py-3.5 px-4 text-slate-400 whitespace-nowrap">羽光</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ------------------ SLIDE 7: 個人賽 Eric / 饅頭 (E4) ------------------ -->
+            <div id="slide-7" class="slide-view hidden flex flex-col flex-grow py-2">
+                <div class="flex justify-between items-start mb-3 border-b border-slate-800 pb-2">
+                    <div>
+                        <span class="bg-sky-500/10 text-sky-400 border border-sky-500/20 py-0.5 px-2 rounded-full text-xs font-bold uppercase tracking-wider mb-1 inline-block">6/13 (六) 個人雙打 — 歡樂組</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">選手：Eric / 饅頭</h2>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-sky-400 font-mono font-bold text-lg">E組 (E4)</div>
+                        <div class="text-emerald-400 text-[10px] font-bold mt-0.5">10:00 ~ 10:30 優先報到</div>
+                    </div>
+                </div>
+                
+                <p class="text-slate-400 text-xs mb-3"><i class="fa-regular fa-lightbulb text-yellow-400 mr-1"></i>享大船 A~I 組優先報到特權。小組前二名晉級。場地與對手如下：</p>
+                <div class="sm:hidden text-center text-[10px] text-sky-400 animate-pulse mb-2"><i class="fa-solid fa-arrows-left-right mr-1"></i> ◀ 左右滑動表格檢視完整賽程 ▶</div>
+
+                <div class="flex-grow flex items-center justify-center w-full">
+                    <div class="w-full overflow-x-auto rounded-xl border border-slate-800/80 bg-slate-950/50 no-scrollbar">
+                        <table class="w-full text-left border-collapse min-w-[760px]">
+                            <thead>
+                                <tr class="bg-slate-800/50 text-sky-400 text-xs uppercase tracking-wider border-b border-slate-800">
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">預賽場次</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">大會表定時間</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">比賽場地</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">對戰對手</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">對手所屬隊伍</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-xs sm:text-sm divide-y divide-slate-800/40">
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">歡樂組【10】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">11:44</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-bold border border-emerald-500/20">Court 4</span></td>
+                                    <td class="py-3.5 px-4 text-white font-semibold whitespace-nowrap">Alan / Andy</td>
+                                    <td class="py-3.5 px-4 text-slate-400 whitespace-nowrap">熊力</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">歡樂組【36】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">12:32</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-bold border border-emerald-500/20">Court 6</span></td>
+                                    <td class="py-3.5 px-4 text-white font-semibold whitespace-nowrap">小熊 / 小馬</td>
+                                    <td class="py-3.5 px-4 text-slate-400 whitespace-nowrap">熊力 (代報)</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">歡樂組【61】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">13:56</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-bold border border-emerald-500/20">Court 5</span></td>
+                                    <td class="py-3.5 px-4 text-white font-semibold whitespace-nowrap">史丹 / 尼克</td>
+                                    <td class="py-3.5 px-4 text-slate-400 whitespace-nowrap">清涼</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ------------------ SLIDE 8: 個人賽 阿浩 / 二號 (G4) ------------------ -->
+            <div id="slide-8" class="slide-view hidden flex flex-col flex-grow py-2">
+                <div class="flex justify-between items-start mb-3 border-b border-slate-800 pb-2">
+                    <div>
+                        <span class="bg-sky-500/10 text-sky-400 border border-sky-500/20 py-0.5 px-2 rounded-full text-xs font-bold uppercase tracking-wider mb-1 inline-block">6/13 (六) 個人雙打 — 歡樂組</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">選手：阿浩 / 二號</h2>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-sky-400 font-mono font-bold text-lg">G組 (G4)</div>
+                        <div class="text-emerald-400 text-[10px] font-bold mt-0.5">10:00 ~ 10:30 優先報到</div>
+                    </div>
+                </div>
+                
+                <p class="text-slate-400 text-xs mb-3"><i class="fa-regular fa-clock text-sky-400 mr-1"></i>享大船 A~I 組優先報到特權。小組前二名晉級。場地與對手如下：</p>
+                <div class="sm:hidden text-center text-[10px] text-sky-400 animate-pulse mb-2"><i class="fa-solid fa-arrows-left-right mr-1"></i> ◀ 左右滑動表格檢視完整賽程 ▶</div>
+
+                <div class="flex-grow flex items-center justify-center w-full">
+                    <div class="w-full overflow-x-auto rounded-xl border border-slate-800/80 bg-slate-950/50 no-scrollbar">
+                        <table class="w-full text-left border-collapse min-w-[760px]">
+                            <thead>
+                                <tr class="bg-slate-800/50 text-sky-400 text-xs uppercase tracking-wider border-b border-slate-800">
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">預賽場次</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">大會表定時間</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">比賽場地</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">對戰對手</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">對手所屬隊伍</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-xs sm:text-sm divide-y divide-slate-800/40">
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">歡樂組【14】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">11:44</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-bold border border-emerald-500/20">Court 6</span></td>
+                                    <td class="py-3.5 px-4 text-white font-semibold whitespace-nowrap">羅吉 / 黑黑</td>
+                                    <td class="py-3.5 px-4 text-slate-400 whitespace-nowrap">成功</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">歡樂組【40】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">12:44</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-bold border border-emerald-500/20">Court 4</span></td>
+                                    <td class="py-3.5 px-4 text-white font-semibold whitespace-nowrap">肉粽 / 阿丹</td>
+                                    <td class="py-3.5 px-4 text-slate-400 whitespace-nowrap">活力</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">歡樂組【65】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">14:08</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-bold border border-emerald-500/20">Court 3</span></td>
+                                    <td class="py-3.5 px-4 text-white font-semibold whitespace-nowrap">York / AKI</td>
+                                    <td class="py-3.5 px-4 text-slate-400 whitespace-nowrap">狸貓拳</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ------------------ SLIDE 9: 團體賽 — 山重幼稚園 (B1) ------------------ -->
+            <div id="slide-9" class="slide-view hidden flex flex-col flex-grow py-2">
+                <div class="flex justify-between items-start mb-3 border-b border-slate-850 pb-2">
+                    <div>
+                        <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 py-0.5 px-2 rounded-full text-xs font-bold uppercase tracking-wider mb-1 inline-block">6/14 (日) 團體賽 — 低階組</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">大船羽球-山重幼稚園</h2>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-emerald-400 font-mono font-bold text-lg">B組 (B1)</div>
+                        <div class="text-sky-400 text-[10px] font-bold mt-0.5">07:00 ~ 07:20 優先報到</div>
+                    </div>
+                </div>
+
+                <!-- 戰隊出征成員 -->
+                <div class="bg-slate-950/60 border border-slate-800/80 p-3 rounded-xl mb-4">
+                    <h4 class="text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-1.5"><i class="fa-solid fa-users text-emerald-400 mr-1"></i> 戰隊出征選手名單</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">阿浩</span>
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">Eason</span>
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">東東</span>
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">MoJoe</span>
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">Rick</span>
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">霈宜</span>
+                    </div>
+                </div>
+
+                <div class="sm:hidden text-center text-[10px] text-emerald-400 animate-pulse mb-2"><i class="fa-solid fa-arrows-left-right mr-1"></i> ◀ 左右滑動表格檢視完整賽程 ▶</div>
+
+                <div class="flex-grow flex items-center justify-center w-full">
+                    <div class="w-full overflow-x-auto rounded-xl border border-slate-800/80 bg-slate-950/50 no-scrollbar">
+                        <table class="w-full text-left border-collapse min-w-[760px]">
+                            <thead>
+                                <tr class="bg-slate-800/50 text-emerald-400 text-xs uppercase tracking-wider border-b border-slate-800">
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">預賽場次</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">大會表定時間</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">比賽場地</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">首輪對戰對手</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-xs sm:text-sm divide-y divide-slate-800/40">
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">低階組【3】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">07:30</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded font-bold border border-sky-500/20">Court 3</span></td>
+                                    <td class="py-3.5 px-4 text-slate-300 whitespace-nowrap">樂芙 - 樂芙&羽球C</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">低階組【23】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">09:15</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded font-bold border border-sky-500/20">Court 5</span></td>
+                                    <td class="py-3.5 px-4 text-slate-300 whitespace-nowrap">懶極 - 懶極羽球</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">低階組【43】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">11:55</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded font-bold border border-sky-500/20">Court 1</span></td>
+                                    <td class="py-3.5 px-4 text-slate-300 whitespace-nowrap">香港柴犬 - 精靈收集師</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ------------------ SLIDE 10: 團體賽 — A-FORCE (D4) ------------------ -->
+            <div id="slide-10" class="slide-view hidden flex flex-col flex-grow py-2">
+                <div class="flex justify-between items-start mb-3 border-b border-slate-850 pb-2">
+                    <div>
+                        <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 py-0.5 px-2 rounded-full text-xs font-bold uppercase tracking-wider mb-1 inline-block">6/14 (日) 團體賽 — 低階組</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">蕩蕩歡樂-A-FORCE</h2>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-emerald-400 font-mono font-bold text-lg">D組 (D4)</div>
+                        <div class="text-sky-400 text-[10px] font-bold mt-0.5">07:00 ~ 07:20 優先報到</div>
+                    </div>
+                </div>
+
+                <!-- 戰隊出征成員 -->
+                <div class="bg-slate-950/60 border border-slate-800/80 p-3 rounded-xl mb-4">
+                    <h4 class="text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-1.5"><i class="fa-solid fa-users text-emerald-400 mr-1"></i> 戰隊出征選手名單</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">AP</span>
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">AG</span>
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">AO</span>
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">AK</span>
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">AT</span>
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">AH</span>
+                    </div>
+                </div>
+
+                <div class="sm:hidden text-center text-[10px] text-emerald-400 animate-pulse mb-2"><i class="fa-solid fa-arrows-left-right mr-1"></i> ◀ 左右滑動表格檢視完整賽程 ▶</div>
+
+                <div class="flex-grow flex items-center justify-center w-full">
+                    <div class="w-full overflow-x-auto rounded-xl border border-slate-800/80 bg-slate-950/50 no-scrollbar">
+                        <table class="w-full text-left border-collapse min-w-[760px]">
+                            <thead>
+                                <tr class="bg-slate-800/50 text-emerald-400 text-xs uppercase tracking-wider border-b border-slate-800">
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">預賽場次</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">大會表定時間</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">比賽場地</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">首輪對戰對手</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-xs sm:text-sm divide-y divide-slate-800/40">
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">低階組【8】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">08:05</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded font-bold border border-sky-500/20">Court 2</span></td>
+                                    <td class="py-3.5 px-4 text-slate-300 whitespace-nowrap">樂芙 - 樂芙&羽球A</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">低階組【28】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">09:50</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded font-bold border border-sky-500/20">Court 4</span></td>
+                                    <td class="py-3.5 px-4 text-slate-300 whitespace-nowrap">夏洛利 - 夏洛利紅包場</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">低階組【47】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">11:55</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded font-bold border border-sky-500/20">Court 5</span></td>
+                                    <td class="py-3.5 px-4 text-slate-300 whitespace-nowrap">歡樂 - 春麗賣黑鯛包蛋堡</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ------------------ SLIDE 11: 團體賽 — 陽光男子羽球團 (E1) ------------------ -->
+            <div id="slide-11" class="slide-view hidden flex flex-col flex-grow py-2">
+                <div class="flex justify-between items-start mb-3 border-b border-slate-850 pb-2">
+                    <div>
+                        <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 py-0.5 px-2 rounded-full text-xs font-bold uppercase tracking-wider mb-1 inline-block">6/14 (日) 團體賽 — 低階組</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">大船羽球-陽光男子羽球團</h2>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-emerald-400 font-mono font-bold text-lg">E組 (E1)</div>
+                        <div class="text-sky-400 text-[10px] font-bold mt-0.5">07:00 ~ 07:20 優先報到</div>
+                    </div>
+                </div>
+
+                <!-- 戰隊出征成員 -->
+                <div class="bg-slate-950/60 border border-slate-800/80 p-3 rounded-xl mb-4">
+                    <h4 class="text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-1.5"><i class="fa-solid fa-users text-emerald-400 mr-1"></i> 戰隊出征選手名單</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">Aaron</span>
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">Han</span>
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">饅頭</span>
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">Wei</span>
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">Stanley</span>
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">Alan</span>
+                    </div>
+                </div>
+
+                <div class="sm:hidden text-center text-[10px] text-emerald-400 animate-pulse mb-2"><i class="fa-solid fa-arrows-left-right mr-1"></i> ◀ 左右滑動表格檢視完整賽程 ▶</div>
+
+                <div class="flex-grow flex items-center justify-center w-full">
+                    <div class="w-full overflow-x-auto rounded-xl border border-slate-800/80 bg-slate-950/50 no-scrollbar">
+                        <table class="w-full text-left border-collapse min-w-[760px]">
+                            <thead>
+                                <tr class="bg-slate-800/50 text-emerald-400 text-xs uppercase tracking-wider border-b border-slate-800">
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">預賽場次</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">大會表定時間</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">比賽場地</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">首輪對戰對手</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-xs sm:text-sm divide-y divide-slate-800/40">
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">低階組【9】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">08:05</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded font-bold border border-sky-500/20">Court 3</span></td>
+                                    <td class="py-3.5 px-4 text-slate-300 whitespace-nowrap">樂芙 - 樂芙&羽球B</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">低階組【29】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">09:50</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded font-bold border border-sky-500/20">Court 5</span></td>
+                                    <td class="py-3.5 px-4 text-slate-300 whitespace-nowrap">水曜豪杰 - 只有我是單身</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">低階組【49】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">12:30</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded font-bold border border-sky-500/20">Court 1</span></td>
+                                    <td class="py-3.5 px-4 text-slate-300 whitespace-nowrap">翱陽 - 翱陽</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ------------------ SLIDE 12: 團體賽 — 靠北羽球隊 (H3) ------------------ -->
+            <div id="slide-12" class="slide-view hidden flex flex-col flex-grow py-2">
+                <div class="flex justify-between items-start mb-3 border-b border-slate-850 pb-2">
+                    <div>
+                        <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 py-0.5 px-2 rounded-full text-xs font-bold uppercase tracking-wider mb-1 inline-block">6/14 (日) 團體賽 — 低階組</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">大船羽球-靠北羽球隊</h2>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-emerald-400 font-mono font-bold text-lg">H組 (H3)</div>
+                        <div class="text-sky-400 text-[10px] font-bold mt-0.5">07:00 ~ 07:20 優先報到</div>
+                    </div>
+                </div>
+
+                <!-- 戰隊出征成員 -->
+                <div class="bg-slate-950/60 border border-slate-800/80 p-3 rounded-xl mb-4">
+                    <h4 class="text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-1.5"><i class="fa-solid fa-users text-emerald-400 mr-1"></i> 戰隊出征選手名單</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">信宜</span>
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">利恩</span>
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">阿仁</span>
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">陳兒</span>
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">Tony</span>
+                        <span class="bg-slate-800 border border-slate-700/60 text-white font-semibold py-1 px-3 rounded-full text-xs">Gino</span>
+                    </div>
+                </div>
+
+                <div class="sm:hidden text-center text-[10px] text-emerald-400 animate-pulse mb-2"><i class="fa-solid fa-arrows-left-right mr-1"></i> ◀ 左右滑動表格檢視完整賽程 ▶</div>
+
+                <div class="flex-grow flex items-center justify-center w-full">
+                    <div class="w-full overflow-x-auto rounded-xl border border-slate-800/80 bg-slate-950/50 no-scrollbar">
+                        <table class="w-full text-left border-collapse min-w-[760px]">
+                            <thead>
+                                <tr class="bg-slate-800/50 text-emerald-400 text-xs uppercase tracking-wider border-b border-slate-800">
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">預賽場次</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">大會表定時間</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">比賽場地</th>
+                                    <th class="py-3 px-4 font-bold whitespace-nowrap">首輪對戰對手</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-xs sm:text-sm divide-y divide-slate-800/40">
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">低階組【16】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">08:40</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded font-bold border border-sky-500/20">Court 4</span></td>
+                                    <td class="py-3.5 px-4 text-slate-300 whitespace-nowrap">羽光 - 椎間盤瑞士糖</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">低階組【35】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">10:25</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded font-bold border border-sky-500/20">Court 5</span></td>
+                                    <td class="py-3.5 px-4 text-slate-300 whitespace-nowrap">微光_最粗的夢想</td>
+                                </tr>
+                                <tr class="hover:bg-slate-800/20 transition-colors">
+                                    <td class="py-3.5 px-4 font-bold text-white whitespace-nowrap">低階組【56】</td>
+                                    <td class="py-3.5 px-4 font-mono text-slate-300 whitespace-nowrap">13:05</td>
+                                    <td class="py-3.5 px-4 whitespace-nowrap"><span class="text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded font-bold border border-sky-500/20">Court 5</span></td>
+                                    <td class="py-3.5 px-4 text-slate-300 whitespace-nowrap">香港 - 哇哇啦啦呱呱</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ------------------ SLIDE 13: 報到與檢錄規則 ------------------ -->
+            <div id="slide-13" class="slide-view hidden flex flex-col flex-grow py-2">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white border-l-4 border-sky-500 pl-3 mb-4">報到流程與大會官方規範</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 flex-grow items-center">
+                    <!-- 左側 霓虹警示卡片 -->
+                    <div class="relative group overflow-hidden bg-gradient-to-br from-[#121c33] to-[#1d1435] border-2 border-emerald-500/80 rounded-2xl p-5 shadow-[0_0_20px_rgba(16,185,129,0.15)] flex flex-col justify-center">
+                        <div class="absolute -right-8 -bottom-8 opacity-10 text-emerald-400 text-9xl">
+                            <i class="fa-solid fa-id-card"></i>
+                        </div>
+                        <h3 class="text-emerald-400 font-extrabold text-lg flex items-center gap-2 mb-2">
+                            <i class="fa-solid fa-id-card-clip animate-bounce"></i> 選手證重要須知
+                        </h3>
+                        <p class="text-white text-base font-bold mb-2 leading-relaxed">
+                            「大會選手證會在比賽當天報到時發放！」
+                        </p>
+                        <p class="text-emerald-300 text-xs sm:text-sm leading-relaxed">
+                            領隊報到時請統一領取。下場比賽時必須隨身攜帶選手證核對，若無證件或照片與本人不符，該隊成績將「不予計算（直接失格）」，請大家嚴格配合！
+                        </p>
+                    </div>
+
+                    <!-- 右側 清單條目 -->
+                    <div class="space-y-3">
+                        <div class="flex gap-3 items-start bg-slate-950/40 border border-slate-800/60 p-3 rounded-xl">
+                            <span class="text-emerald-400 mt-0.5"><i class="fa-solid fa-circle-check"></i></span>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">整組報到</h4>
+                                <p class="text-slate-400 text-xs mt-0.5">請在表定報到時間內，以「整組/整隊」為單位前往3樓報到處進行簽到。</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start bg-slate-950/40 border border-slate-800/60 p-3 rounded-xl">
+                            <span class="text-sky-400 mt-0.5"><i class="fa-solid fa-bullhorn text-xs"></i></span>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">賽前 10 分鐘檢錄</h4>
+                                <p class="text-slate-400 text-xs mt-0.5">每場賽事前 10 分鐘，務必緊盯並聆聽檢錄組廣播，攜帶選手證至檢錄組進行檢錄。</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start bg-slate-950/40 border border-slate-800/60 p-3 rounded-xl">
+                            <span class="text-sky-400 mt-0.5"><i class="fa-solid fa-file-invoice"></i></span>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">團體賽點單</h4>
+                                <p class="text-slate-400 text-xs mt-0.5">團體賽各隊負責人，請務必在賽前 20 分鐘前往大會競賽組領取比賽點單。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ------------------ SLIDE 14: 配置圖 ------------------ -->
+            <div id="slide-14" class="slide-view hidden flex flex-col flex-grow py-1">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2 gap-2">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white border-l-4 border-sky-500 pl-3">3F 戰術場地配置與休息區</h2>
+                    <!-- 切換按鈕 -->
+                    <div class="flex bg-slate-950/80 p-1 rounded-xl border border-slate-800">
+                        <button id="btn-sat" class="px-3 py-1.5 text-xs font-bold rounded-lg transition-all bg-sky-500 text-white shadow-lg shadow-sky-500/20" onclick="switchMap('sat')">6/13 個人賽</button>
+                        <button id="btn-sun" class="px-3 py-1.5 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white" onclick="switchMap('sun')">6/14 團體賽</button>
+                    </div>
+                </div>
+
+                <!-- 移動端操作指南 -->
+                <div class="md:hidden text-center text-[10px] text-sky-400 animate-pulse mb-2">
+                    <i class="fa-solid fa-arrows-left-right mr-1"></i> ◀ 左右滑動檢視完整 3F 戰術配置圖 ▶
+                </div>
+
+                <!-- 配置圖容器 -->
+                <div class="flex-grow w-full overflow-x-auto rounded-xl border border-slate-800/80 bg-slate-950/50 p-3 cursor-grab active:cursor-grabbing no-scrollbar">
+                    
+                    <!-- 內部地圖本體 (強固定寬度確保在手機上平移不跑版) -->
+                    <div class="w-[940px] h-[330px] flex gap-2 relative text-[10px] select-none mx-auto">
+                        
+                        <!-- 左側側欄 -->
+                        <div id="map-left-col" class="w-[140px] flex flex-col gap-1 justify-between h-full">
+                            <!-- JS將會根據日期動態插入 -->
+                        </div>
+
+                        <!-- 中央核心區 -->
+                        <div class="flex-grow flex flex-col gap-2 h-full">
+                            <!-- 頂層一排 -->
+                            <div class="h-[40px] flex gap-1.5 w-full">
+                                <div class="flex-1 bg-slate-800/50 border border-slate-700/40 rounded flex items-center justify-center text-center px-1"><span class="scale-90 font-medium">羽多 (4)</span></div>
+                                <div class="flex-1 bg-slate-800/50 border border-slate-700/40 rounded flex items-center justify-center text-center px-1"><span class="scale-90 font-medium">羽光/微光 (11)</span></div>
+                                <div class="flex-[1.5] hazard-bg border border-red-500/30 rounded flex items-center justify-center text-center text-white font-extrabold px-1 text-[9px]"><span class="scale-90 tracking-tighter">🚫 攀岩場 (嚴禁進入)</span></div>
+                                <div class="flex-1 bg-slate-800/50 border border-slate-700/40 rounded flex items-center justify-center text-center px-1"><span class="scale-90 font-medium" id="map-top-booth-4">清涼/加熱 (11)</span></div>
+                                <div class="flex-1 bg-slate-800/50 border border-slate-700/40 rounded flex items-center justify-center text-center px-1"><span class="scale-90 font-medium" id="map-top-booth-5">星光 (8)</span></div>
+                            </div>
+
+                            <!-- 6個球場核心 -->
+                            <div class="flex-grow bg-slate-950 border border-slate-800 rounded-lg p-2 grid grid-cols-3 grid-rows-2 gap-1.5 relative">
+                                <div class="net-line relative bg-emerald-950/50 border-2 border-emerald-500/80 rounded flex items-center justify-center font-extrabold text-emerald-400 text-sm tracking-wider shadow-[inset_0_0_10px_rgba(16,185,129,0.3)]">Court 6</div>
+                                <div class="net-line relative bg-emerald-950/50 border-2 border-emerald-500/80 rounded flex items-center justify-center font-extrabold text-emerald-400 text-sm tracking-wider shadow-[inset_0_0_10px_rgba(16,185,129,0.3)]">Court 5</div>
+                                <div class="net-line relative bg-emerald-950/50 border-2 border-emerald-500/80 rounded flex items-center justify-center font-extrabold text-emerald-400 text-sm tracking-wider shadow-[inset_0_0_10px_rgba(16,185,129,0.3)]">Court 4</div>
+                                <div class="net-line relative bg-emerald-950/50 border-2 border-emerald-500/80 rounded flex items-center justify-center font-extrabold text-emerald-400 text-sm tracking-wider shadow-[inset_0_0_10px_rgba(16,185,129,0.3)]">Court 1</div>
+                                <div class="net-line relative bg-emerald-950/50 border-2 border-emerald-500/80 rounded flex items-center justify-center font-extrabold text-emerald-400 text-sm tracking-wider shadow-[inset_0_0_10px_rgba(16,185,129,0.3)]">Court 2</div>
+                                <div class="net-line relative bg-emerald-950/50 border-2 border-emerald-500/80 rounded flex items-center justify-center font-extrabold text-emerald-400 text-sm tracking-wider shadow-[inset_0_0_10px_rgba(16,185,129,0.3)]">Court 3</div>
+                            </div>
+
+                            <!-- 底層大會工作人員與選手體驗區 -->
+                            <div class="h-[40px] flex gap-1.5 w-full">
+                                <div class="flex-[0.8] bg-slate-800/80 border border-slate-700 rounded flex items-center justify-center font-bold text-slate-400"><span class="scale-90">工具區</span></div>
+                                <div class="flex-1 bg-sky-500/10 border border-sky-500/30 text-sky-400 rounded flex items-center justify-center text-center font-bold"><span class="scale-90">📋 檢錄組</span></div>
+                                <div class="flex-1.5 bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 rounded flex items-center justify-center text-center font-bold px-1"><span class="scale-90">💼 大會裁判區</span></div>
+                                <div class="flex-[1.2] bg-emerald-500/5 border border-emerald-500/20 text-emerald-400 rounded flex items-center justify-center text-center font-bold"><span class="scale-90" id="map-bottom-medical">🏥 體驗區</span></div>
+                                <div class="flex-1.5 bg-slate-800/50 border border-slate-700/40 rounded flex items-center justify-center text-center font-medium px-1"><span class="scale-90" id="map-bottom-booth-5">熊力/歡樂 (14)</span></div>
+                            </div>
+                        </div>
+
+                        <!-- 右側側欄 -->
+                        <div id="map-right-col" class="w-[145px] flex flex-col gap-1 justify-between h-full">
+                            <!-- JS將會根據日期動態插入 -->
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 底部危險警告 Banner -->
+                <div class="mt-2 bg-red-500/10 border border-red-500/30 rounded-xl py-2 px-3 flex items-center gap-2 text-red-400 text-[11px] sm:text-xs text-left">
+                    <i class="fa-solid fa-triangle-exclamation animate-pulse flex-shrink-0 mt-0.5"></i>
+                    <p class="font-semibold">
+                        <strong>動線警示：</strong>三樓上方攀岩場嚴禁攀爬！右側部分安全門（標示門不開）不對外開放，請統一由三號、四號安全門進出。
+                    </p>
+                </div>
+            </div>
+
+            <!-- ------------------ SLIDE 15: 賽前備戰 ------------------ -->
+            <div id="slide-15" class="slide-view hidden flex flex-col flex-grow py-2">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white border-l-4 border-sky-500 pl-3 mb-6">賽前黃金備戰期心法</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 flex-grow items-center overflow-y-auto no-scrollbar">
+                    <!-- 卡片 1 -->
+                    <div class="bg-slate-950/40 border border-slate-800 rounded-xl p-4 sm:p-5 flex flex-col items-start gap-3 hover:border-sky-500/40 transition-colors">
+                        <div class="w-10 h-10 rounded-lg bg-sky-500/10 flex items-center justify-center text-sky-400 text-lg">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-extrabold text-base mb-1.5">裝備檢整 (賽前2週)</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed text-left">
+                                建議於賽前兩週重新穿線，讓線的磅數穩定，避免當日穿新線彈性太硬，並極力防範帶「脆化舊線」現場意外斷裂。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 卡片 2 -->
+                    <div class="bg-slate-950/40 border border-slate-800 rounded-xl p-4 sm:p-5 flex flex-col items-start gap-3 hover:border-sky-500/40 transition-colors">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-lg">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-extrabold text-base mb-1.5">身體安全控制</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed text-left">
+                                維持球感重於加量練習。這兩週切忌盲目衝刺高強度訓練。若過度疲勞，極易在賽前拉傷或關節發炎造成受傷。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 卡片 3 -->
+                    <div class="bg-slate-950/40 border border-slate-800 rounded-xl p-4 sm:p-5 flex flex-col items-start gap-3 hover:border-sky-500/40 transition-colors">
+                        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 text-lg">
+                            <i class="fa-solid fa-bed"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-extrabold text-base mb-1.5">睡眠管理 (前一晚)</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed text-left">
+                                羽球極度考驗足底敏捷反應與動態視覺，其疲勞修復與睡眠完全掛鉤。賽前一晚請務必睡滿 7-8 小時以充足體能。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ------------------ SLIDE 16: 當日補給 ------------------ -->
+            <div id="slide-16" class="slide-view hidden flex flex-col flex-grow py-2">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white border-l-4 border-sky-500 pl-3 mb-6">比賽當日高效率充能規劃</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 flex-grow items-center overflow-y-auto no-scrollbar">
+                    <!-- 卡片 1 -->
+                    <div class="bg-slate-950/40 border border-slate-800 rounded-xl p-4 sm:p-5 flex flex-col items-start gap-3 hover:border-sky-500/40 transition-colors">
+                        <div class="w-10 h-10 rounded-lg bg-sky-500/10 flex items-center justify-center text-sky-400 text-lg">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-extrabold text-base mb-1.5">高效吸收能量食品</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed text-left">
+                                高強度對抗對血糖消耗極大，請自備高效率充能乾糧（能量果凍膠、香蕉、燕麥棒或巧克力），在賽事空檔迅速補充。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 卡片 2 -->
+                    <div class="bg-slate-950/40 border border-slate-800 rounded-xl p-4 sm:p-5 flex flex-col items-start gap-3 hover:border-sky-500/40 transition-colors">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-lg">
+                            <i class="fa-solid fa-bottle-water"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-extrabold text-base mb-1.5">補給與水分稀釋</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed text-left">
+                                劇烈運動時水分與電解質不平衡極易引發抽筋。建議以 1:1 的比例將運動飲料加水稀釋，賽前小口多次飲用。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 卡片 3 -->
+                    <div class="bg-slate-950/40 border border-slate-800 rounded-xl p-4 sm:p-5 flex flex-col items-start gap-3 hover:border-sky-500/40 transition-colors">
+                        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 text-lg">
+                            <i class="fa-solid fa-kit-medical"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-extrabold text-base mb-1.5">賽事必備防護備品</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed text-left">
+                                隨身攜帶「肌樂 / 舒緩噴霧」。此外，多帶 2 件排汗上衣及襪子更換，避免因汗水沾濕而降溫，確保腳底抓地力。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 頁尾控制區 -->
+    <footer class="w-full bg-slate-900 border-t border-slate-800/80 px-4 py-4 md:px-8 sticky bottom-0 z-40 flex flex-col sm:flex-row gap-3 items-center justify-between">
+        
+        <!-- 當前幻燈片小圓點 (桌機版顯示) -->
+        <div class="hidden sm:flex flex-wrap gap-1.5 max-w-lg order-2 sm:order-1">
+            <span class="w-2.5 h-2.5 rounded-full bg-sky-500 shadow-[0_0_8px_#0ea5e9] cursor-pointer transition-all duration-300" id="dot-1" onclick="jumpToSlide(1)"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-600 cursor-pointer transition-all duration-300" id="dot-2" onclick="jumpToSlide(2)"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-600 cursor-pointer transition-all duration-300" id="dot-3" onclick="jumpToSlide(3)"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-600 cursor-pointer transition-all duration-300" id="dot-4" onclick="jumpToSlide(4)"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-600 cursor-pointer transition-all duration-300" id="dot-5" onclick="jumpToSlide(5)"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-600 cursor-pointer transition-all duration-300" id="dot-6" onclick="jumpToSlide(6)"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-600 cursor-pointer transition-all duration-300" id="dot-7" onclick="jumpToSlide(7)"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-600 cursor-pointer transition-all duration-300" id="dot-8" onclick="jumpToSlide(8)"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-600 cursor-pointer transition-all duration-300" id="dot-9" onclick="jumpToSlide(9)"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-600 cursor-pointer transition-all duration-300" id="dot-10" onclick="jumpToSlide(10)"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-600 cursor-pointer transition-all duration-300" id="dot-11" onclick="jumpToSlide(11)"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-600 cursor-pointer transition-all duration-300" id="dot-12" onclick="jumpToSlide(12)"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-600 cursor-pointer transition-all duration-300" id="dot-13" onclick="jumpToSlide(13)"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-600 cursor-pointer transition-all duration-300" id="dot-14" onclick="jumpToSlide(14)"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-600 cursor-pointer transition-all duration-300" id="dot-15" onclick="jumpToSlide(15)"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-600 cursor-pointer transition-all duration-300" id="dot-16" onclick="jumpToSlide(16)"></span>
+        </div>
+
+        <!-- 手機版專屬進度條 (手機版顯示) -->
+        <div class="sm:hidden flex items-center justify-between w-full order-3 px-1">
+            <span class="text-[10px] font-mono text-slate-400">進度</span>
+            <div class="flex-grow mx-3 bg-slate-800 h-1 rounded-full overflow-hidden relative">
+                <div id="progress-bar" class="bg-sky-500 h-full transition-all duration-300" style="width: 6.25%"></div>
+            </div>
+            <span id="progress-text" class="text-[10px] font-mono text-sky-400 font-bold">1/16</span>
+        </div>
+
+        <!-- 導航控制鍵 (防誤觸大按鍵設計) -->
+        <div class="flex gap-3 w-full sm:w-auto order-1 sm:order-2">
+            <button class="flex-1 sm:flex-none py-2.5 px-5 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 hover:text-white rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5" onclick="prevSlide()">
+                <i class="fa-solid fa-chevron-left text-[10px]"></i> 上一步
+            </button>
+            <button class="flex-1 sm:flex-none py-2.5 px-6 bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-400 hover:to-sky-500 text-white font-extrabold text-xs rounded-xl shadow-lg shadow-sky-500/20 transition-all flex items-center justify-center gap-1.5" onclick="nextSlide()" id="next-btn">
+                下一步 <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            </button>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 16;
+
+        // 6/13 個人賽左側/右側配置數據
+        const leftColSat = [
+            '羽智/白努力 (4)', '羽智 (4)', '羽智 (4)', '水曜豪杰 (4)', '水曜豪杰 (3)', 
+            '狸貓拳/大寶寶 (3)', '狸貓拳 (5)', '啾咪咪/香香 (6)', '愛羽/羽球色 (5)', '愛羽 (7)', '愛羽 (6)'
+        ];
+        const rightColSat = [
+            '星光 (8)', 'BH (7)', '柴犬/VLBC (6)', '個別/香港 (6)', '個別/香港/類極 (6)',
+            '🚪 三號門 (進出)', '🚪 四號門 (進出)', '地方姊妹 (6)', '🏆 羽球大船 (5)', 
+            '夏洛利/羽水 (6)', '成功 (7)', '活力 (9)'
+        ];
+
+        // 6/14 團體賽左側/右側配置數據
+        const leftColSun = [
+            '香港翱陽 (3)', 'BH (2)', '柴犬 (2)', '水曜豪杰 (2)', '大寶寶/羽智 (2)', 
+            '狸貓拳 (2)', '羽球色 (2)', '愛羽/啾咪咪 (2)', '愛羽 (2)', '愛羽 (2)'
+        ];
+        const rightColSun = [
+            '樂芙 (3)', '樂芙/星光 (4)', '成功 (2)', '加熱 (2)', '🚪 三號門 (進出)', 
+            '🚪 四號門 (進出)', '清涼 (2)', '獺極/清涼 (2)', '羽光 (2)', '地方姊妹 (3)', 
+            '🏆 羽球大船 (3)', '📊 報到/成績公告'
+        ];
+
+        // 初始化渲染 Sat 地圖
+        window.onload = function() {
+            switchMap('sat');
+        };
+
+        // 渲染 3F 配置地圖函數
+        function renderStadiumMap(day) {
+            const leftColEl = document.getElementById('map-left-col');
+            const rightColEl = document.getElementById('map-right-col');
+            
+            // 根據日期切換特定大會框細節
+            const topBooth4 = document.getElementById('map-top-booth-4');
+            const topBooth5 = document.getElementById('map-top-booth-5');
+            const bottomBooth5 = document.getElementById('map-bottom-booth-5');
+            const bottomMedical = document.getElementById('map-bottom-medical');
+
+            if (day === 'sat') {
+                topBooth4.innerHTML = '清涼/加熱 (11)';
+                topBooth5.innerHTML = '星光 (8)';
+                bottomBooth5.innerHTML = '熊力/歡樂 (14)';
+                bottomMedical.innerHTML = '🏥 體驗區';
+
+                leftColEl.innerHTML = leftColSat.map(name => createBoothHTML(name, false)).join('');
+                rightColEl.innerHTML = rightColSat.map(name => {
+                    const isGate = name.includes('門');
+                    const isDachuan = name.includes('大船');
+                    return createBoothHTML(name, isDachuan, isGate);
+                }).join('');
+            } else {
+                topBooth4.innerHTML = '樂芙 (4)';
+                topBooth5.innerHTML = '樂芙 (3)';
+                bottomBooth5.innerHTML = '歡樂/熊力/活力 (14)';
+                bottomMedical.innerHTML = '🏥 醫護組';
+
+                leftColEl.innerHTML = leftColSun.map(name => createBoothHTML(name, false)).join('');
+                rightColEl.innerHTML = rightColSun.map(name => {
+                    const isGate = name.includes('門');
+                    const isDachuan = name.includes('大船');
+                    const isOfficial = name.includes('成績');
+                    return createBoothHTML(name, isDachuan, isGate, isOfficial);
+                }).join('');
+            }
+        }
+
+        // 產生休息棚卡片的 HTML
+        function createBoothHTML(name, isDachuan, isGate = false, isOfficial = false) {
+            let classes = "flex-grow flex items-center justify-center text-center p-1 rounded font-medium ";
+            if (isDachuan) {
+                classes += "dachuan-highlight text-white font-extrabold text-[11px] select-none";
+            } else if (isGate) {
+                classes += "bg-yellow-500/10 border border-yellow-500/30 text-yellow-500 font-extrabold scale-95";
+            } else if (isOfficial) {
+                classes += "bg-sky-500/10 border border-sky-500/30 text-sky-400 font-extrabold";
+            } else {
+                classes += "bg-slate-800/30 border border-slate-700/20 text-slate-400";
+            }
+            return `<div class="${classes}"><span class="scale-90 truncate w-full">${name}</span></div>`;
+        }
+
+        // 地圖切換按鈕控制
+        function switchMap(day) {
+            const btnSat = document.getElementById('btn-sat');
+            const btnSun = document.getElementById('btn-sun');
+
+            if (day === 'sat') {
+                btnSat.className = "px-3 py-1.5 text-xs font-bold rounded-lg transition-all bg-sky-500 text-white shadow-lg shadow-sky-500/20";
+                btnSun.className = "px-3 py-1.5 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white";
+                renderStadiumMap('sat');
+            } else {
+                btnSun.className = "px-3 py-1.5 text-xs font-bold rounded-lg transition-all bg-sky-500 text-white shadow-lg shadow-sky-500/20";
+                btnSat.className = "px-3 py-1.5 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white";
+                renderStadiumMap('sun');
+            }
+        }
+
+        // 簡報跳頁核心機制
+        function updateSlide() {
+            // 隱藏所有 Slide 視窗
+            document.querySelectorAll('.slide-view').forEach(slide => {
+                slide.classList.add('hidden');
+            });
+
+            // 顯示目前 Slide
+            document.getElementById(`slide-${currentSlide}`).classList.remove('hidden');
+
+            // 更新頂部 HUD 進度數字
+            document.getElementById('current-badge').innerText = currentSlide;
+
+            // 更新手機版進度條與文字
+            const percentage = (currentSlide / totalSlides) * 100;
+            document.getElementById('progress-bar').style.width = `${percentage}%`;
+            document.getElementById('progress-text').innerText = `${currentSlide} / ${totalSlides}`;
+
+            // 更新底部指示圓點 (桌機版)
+            for (let i = 1; i <= totalSlides; i++) {
+                const dot = document.getElementById(`dot-${i}`);
+                if (dot) {
+                    if (i === currentSlide) {
+                        dot.className = "w-5 h-2.5 rounded-full bg-sky-500 shadow-[0_0_8px_#0ea5e9] transition-all duration-300 cursor-pointer";
+                    } else {
+                        dot.className = "w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-600 transition-all duration-300 cursor-pointer";
+                    }
+                }
+            }
+
+            // 動態變更「下一步」按鈕文字
+            const nextBtn = document.getElementById('next-btn');
+            if (currentSlide === totalSlides) {
+                nextBtn.innerHTML = `回首頁 <i class="fa-solid fa-house-chimney text-[10px]"></i>`;
+            } else if (currentSlide === 3) {
+                nextBtn.innerHTML = `下一隊 <i class="fa-solid fa-chevron-right text-[10px]"></i>`;
+            } else {
+                nextBtn.innerHTML = `下一步 <i class="fa-solid fa-chevron-right text-[10px]"></i>`;
+            }
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+            } else {
+                currentSlide = 1; // 循環回封面
+            }
+            updateSlide();
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+            } else {
+                currentSlide = totalSlides;
+            }
+            updateSlide();
+        }
+
+        function jumpToSlide(index) {
+            currentSlide = index;
+            updateSlide();
+        }
+
+        // ------------------ 手機版觸控手勢感應 (Swipe Gestures) ------------------
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let touchStartTarget = null; // 記錄觸碰開始的目標元素
+
+        document.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartTarget = e.target; // 記錄觸碰起點
+        }, { passive: true });
+
+        document.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipeGesture();
+        }, { passive: true });
+
+        // 智能判斷：觸碰位置是否位於可橫向滑動/平移的容器內
+        function isWithinScrollable(target) {
+            let el = target;
+            while (el && el !== document.body) {
+                if (el.classList && (el.classList.contains('overflow-x-auto') || el.scrollWidth > el.clientWidth)) {
+                    // 確保該容器此時內容確實超出版面、有滾動條可滑動
+                    if (el.scrollWidth > el.clientWidth) {
+                        return true;
+                    }
+                }
+                el = el.parentElement;
+            }
+            return false;
+        }
+
+        function handleSwipeGesture() {
+            const swipeThreshold = 50; // 最少滑動 50px 才觸發
+            
+            // 排除表格與地圖橫向平移時造成的誤觸頁面切換
+            if (touchStartTarget && isWithinScrollable(touchStartTarget)) {
+                return; // 直接中斷，由瀏覽器預設進行表格/地圖的橫向流暢滾動
+            }
+
+            if (touchStartX - touchEndX > swipeThreshold) {
+                // 向左滑 -> 下一步
+                nextSlide();
+            } else if (touchEndX - touchStartX > swipeThreshold) {
+                // 向右滑 -> 上一步
+                prevSlide();
+            }
+        }
+
+        // 鍵盤左右方向鍵控制
+        document.addEventListener('keydown', e => {
+            if (e.key === 'ArrowRight') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+    </script>
+</body>
+</html>
